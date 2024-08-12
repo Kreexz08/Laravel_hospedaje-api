@@ -3,6 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\ReservationController;
+
+
+Route::apiResource('rooms', RoomController::class);
+
+Route::post('rooms/{room}/reserve', [ReservationController::class, 'reserve']);
+Route::post('rooms/{room}/release', [ReservationController::class, 'release']);
+Route::get('rooms/{room}/statuses', [RoomController::class, 'statuses']);
