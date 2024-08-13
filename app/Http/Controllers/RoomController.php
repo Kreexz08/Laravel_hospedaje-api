@@ -2,50 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RoomRequest;
 use App\Models\Room;
-use Illuminate\Http\Request;
+use App\Services\RoomService;
+use Illuminate\Http\JsonResponse;
 
 class RoomController extends Controller
 {
-    public function index()
+    protected $roomService;
+
+    public function __construct(RoomService $roomService)
     {
-        return Room::all();
+        $this->roomService = $roomService;
     }
 
-    public function store(Request $request)
+    public function index(): JsonResponse
     {
-        $validated = $request->validate([
-            'number' => 'required|integer|unique:rooms',
-        ]);
-
-        return Room::create($validated);
+        return response()->json(Room::all());
     }
 
-    public function show(Room $room)
+    public function store(RoomRequest $request): JsonResponse
     {
-        return $room;
+        $validated = $request->validated();
+        $room = $this->roomService->createRoom($validated);
+        return response()->json($room, 201);
     }
 
-    public function update(Request $request, Room $room)
+    public function show(Room $room): JsonResponse
     {
-        $validated = $request->validate([
-            'number' => 'required|integer|unique:rooms,number,' . $room->id,
-            'status' => 'required|in:available,occupied',
-        ]);
-
-        $room->update($validated);
-
-        return $room;
+        return response()->json($room);
     }
 
-    public function destroy(Room $room)
+    public function update(RoomRequest $request, Room $room): JsonResponse
     {
-        $room->delete();
+        $validated = $request->validated();
+        $updatedRoom = $this->roomService->updateRoom($room, $validated);
+        return response()->json($updatedRoom);
+    }
+
+    public function destroy(Room $room): JsonResponse
+    {
+        $this->roomService->deleteRoom($room);
         return response()->noContent();
     }
 
-    public function statuses(Room $room)
+    public function statuses(Room $room): JsonResponse
     {
-        return $room->statuses()->orderBy('status_changed_at', 'desc')->get();
+        $statuses = $this->roomService->getStatuses($room);
+        return response()->json($statuses);
     }
 }
