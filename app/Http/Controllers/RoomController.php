@@ -40,11 +40,12 @@ class RoomController extends Controller
         return response()->json($updatedRoom);
     }
 
-    public function destroy(Room $room): JsonResponse
+    public function destroy(Room $room)
     {
         $this->roomService->deleteRoom($room);
         return response()->noContent();
     }
+
 
     public function statuses(Room $room): JsonResponse
     {
