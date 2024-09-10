@@ -12,30 +12,36 @@ Body (Ejemplo):
   "password": "secret123"
 }
 
+
 Respuesta exitosa (201):
+
 {
   "access_token": "TOKEN",
   "token_type": "Bearer"
-}
+  }
 
 ### 2. inicio de sesión 
 Método: POST
 Ruta: /login
 Descripción: Autentica un usuario y genera un token de acceso.
 Body (Ejemplo): 
+
 {
   "email": "john@example.com",
   "password": "secret123"
-}
-Respuesta exitosa (200)
+  }
+  
+Respuesta exitosa (200):
+
 {
   "access_token": "TOKEN",
   "token_type": "Bearer"
 }
 
-Respuesta error (401)
+Respuesta error (401):
+
 {
-  "message": "Invalid login details"
+"message": "Invalid login details"
 }
 
 ## Gestion de habitaciones 
@@ -45,14 +51,14 @@ Ruta: /rooms
 Descripción: Devuelve una lista de todas las habitaciones disponibles.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
-Respuesta exitosa (200)
+Respuesta exitosa (200):
+
 [
   {
     "id": 1,
     "name": "Room 1",
     "status": "available"
-  },
-  ...
+    },
 ]
 
 ### 2. Crear una nueva habitación
@@ -61,12 +67,14 @@ Ruta: /rooms
 Descripción: Crea una nueva habitación.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
-Body (Ejemplo)
+Body (Ejemplo):
+
 {
   "number": "101",
   "status": "available"
 }
-Respuesta exitosa (201)
+
+Respuesta exitosa (201):
 {
   "id": 1,
   "number": "101",
@@ -80,6 +88,7 @@ Descripción: Muestra los detalles de una habitación específica.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Respuesta exitosa (200):
+
 {
   "id": 1,
   "number": 101,
@@ -93,16 +102,17 @@ Descripción: Actualiza la información de una habitación.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Body (Ejemplo):
+
 {
   "number": 102,
   "status": "occupied"
-}
+  }
 
 Respuesta exitosa (200):
 {
   "id": 1,
   "number": 102,
-  "status": "occupied"
+  "status": "occupied" 
 }
 
 ### 5. Eliminar una habitación
@@ -119,6 +129,7 @@ Descripción: Devuelve el historial de cambios de estado de una habitación.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Respuesta exitosa (200):
+
 [
   {
     "status": "occupied",
@@ -127,7 +138,7 @@ Respuesta exitosa (200):
   {
     "status": "available",
     "status_changed_at": "2024-09-02T08:00:00Z"
-  }
+  },
 ]
 
 ## Gestion de reservas
@@ -138,10 +149,13 @@ Descripción: Marca una habitación como ocupada.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Respuesta exitosa (200):
+
 {
   "message": "Room reserved successfully."
 }
+
 Respuesta de error (400):
+
 {
   "message": "Room is already occupied."
 }
@@ -156,6 +170,7 @@ Respuesta exitosa (200):
 {
   "message": "Room released successfully."
 }
+
 Respuesta de error (400):
 {
   "message": "Room is already available."
