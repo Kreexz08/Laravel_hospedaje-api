@@ -5,6 +5,7 @@
 Método: POST
 Ruta: /register
 Descripción: Registra un nuevo usuario en el sistema.
+
 Body (Ejemplo):
 
 ```json
@@ -33,6 +34,7 @@ Respuesta exitosa (201):
 Método: POST
 Ruta: /login
 Descripción: Autentica un usuario y genera un token de acceso.
+
 Body (Ejemplo): 
 
 ```json
@@ -66,6 +68,7 @@ Ruta: /rooms
 Descripción: Devuelve una lista de todas las habitaciones disponibles.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
+
 Respuesta exitosa (200):
 
 ```json
@@ -84,6 +87,7 @@ Ruta: /rooms
 Descripción: Crea una nueva habitación.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
+
 Body (Ejemplo):
 
 ```json
@@ -108,6 +112,7 @@ Ruta: /rooms/{room}
 Descripción: Muestra los detalles de una habitación específica.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
+
 Respuesta exitosa (200):
 
 ```json
@@ -124,6 +129,7 @@ Ruta: /rooms/{room}
 Descripción: Actualiza la información de una habitación.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
+
 Body (Ejemplo):
 
 ```json
@@ -156,6 +162,7 @@ Ruta: /rooms/{room}/statuses
 Descripción: Devuelve el historial de cambios de estado de una habitación.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
+
 Respuesta exitosa (200):
 
 ```json
@@ -177,6 +184,7 @@ Ruta: /rooms/{room}/reserve
 Descripción: Marca una habitación como ocupada.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
+
 Respuesta exitosa (200):
 
 ```json
@@ -198,6 +206,7 @@ Ruta: /rooms/{room}/release
 Descripción: Marca una habitación como disponible.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
+
 Respuesta exitosa (200):
 
 ```json
