@@ -25,7 +25,7 @@
   }
 ### 2. inicio de sesión 
 - **Método**: POST
-- **Ruta**: /login
+- **Ruta**: `/login`
 - **Descripción**: Autentica un usuario y genera un token de acceso.
 
 - **Body (Ejemplo)**: 
@@ -51,7 +51,7 @@
 ## Gestion de habitaciones 
 ### 1. Listar habitaciones
 - **Metodo**: GET
-- **Ruta**: /rooms
+- **Ruta**: `/rooms`
 - **Descripción**: Devuelve una lista de todas las habitaciones disponibles.
 - **Encabezados requeridos**:
    - **Authorization**: Bearer {TOKEN}
@@ -68,7 +68,7 @@
    ]
 ### 2. Crear una nueva habitación
 - **Método**: POST
-- **Ruta**: /rooms
+- **Ruta**: `/rooms`
 - **Descripción**: Crea una nueva habitación.
 - **Encabezados requeridos**:
   - **Authorization**: Bearer {TOKEN}
@@ -90,7 +90,7 @@
   }
 ### 3. Ver detalles de una habitación
 - **Método**: GET
-- **Ruta**: /rooms/{room}
+- **Ruta**: `/rooms/{room}`
 - **Descripción**: Muestra los detalles de una habitación específica.
 - **Encabezados requeridos**:
   - **Authorization**: Bearer {TOKEN}
@@ -105,7 +105,7 @@
   }
 ### 4. Actualizar datos de una habitación 
 - **Método**: PUT
-- **Ruta**: /rooms/{room}
+- **Ruta**: `/rooms/{room}`
 - **Descripción**: Actualiza la información de una habitación.
 - **Encabezados requeridos**:
   - **Authorization**: Bearer {TOKEN}
@@ -127,14 +127,14 @@
   }
 ### 5. Eliminar una habitación
 - **Método**: DELETE
-- **Ruta**: /rooms/{room}
+- **Ruta**: `/rooms/{room}`
 - **Descripción**: Elimina una habitación específica.
 - **Encabezados requeridos**:
   - **Authorization**: Bearer {TOKEN}
 
 ### 6. Obtener el historial de estados de una habitación
 - **Método**: GET
-- **Ruta**: /rooms/{room}/statuses
+- **Ruta**: `/rooms/{room}/statuses`
 - **Descripción**: Devuelve el historial de cambios de estado de una habitación.
 - **Encabezados requeridos**:
   - **Authorization**: Bearer {TOKEN}
@@ -155,7 +155,7 @@
 ## Gestion de reservas
 ### 1. Reservar una habitación
 - **Método**: POST
-- **Ruta**: /rooms/{room}/reserve
+- **Ruta**: `/rooms/{room}/reserve`
 - **Descripción**: Marca una habitación como ocupada.
 - **Encabezados requeridos**:
   - **Authorization**: Bearer {TOKEN}
@@ -174,7 +174,7 @@
   }
 ### 2. Liberar una habitación
 - **Método**: POST
-- **Ruta**: /rooms/{room}/release
+- **Ruta**: `/rooms/{room}/release`
 - **Descripción**: Marca una habitación como disponible.
 - **Encabezados requeridos**:
   - **Authorization**: Bearer {TOKEN}
