@@ -6,6 +6,7 @@ Método: POST
 Ruta: /register
 Descripción: Registra un nuevo usuario en el sistema.
 Body (Ejemplo):
+
 ```json
 {
   "name": "John Doe",
@@ -20,7 +21,8 @@ Body (Ejemplo):
 ```
 
 Respuesta exitosa (201):
-```
+
+```json
 {
   "access_token": "TOKEN",
   "token_type": "Bearer"
@@ -32,7 +34,8 @@ Método: POST
 Ruta: /login
 Descripción: Autentica un usuario y genera un token de acceso.
 Body (Ejemplo): 
-```
+
+```json
 {
   "email": "john@example.com",
   "password": "secret123"
@@ -40,7 +43,8 @@ Body (Ejemplo):
 ```
   
 Respuesta exitosa (200):
-```
+
+```json
 {
   "access_token": "TOKEN",
   "token_type": "Bearer"
@@ -48,7 +52,8 @@ Respuesta exitosa (200):
 ```
 
 Respuesta error (401):
-```
+
+```json
 {
 "message": "Invalid login details"
 }
@@ -62,7 +67,8 @@ Descripción: Devuelve una lista de todas las habitaciones disponibles.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Respuesta exitosa (200):
-```
+
+```json
 [
   {
     "id": 1,
@@ -80,14 +86,15 @@ Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Body (Ejemplo):
 
-```
+```json
 {
   "number": "101",
   "status": "available"
 }
 ```
 Respuesta exitosa (201):
-```
+
+```json
 {
   "id": 1,
   "number": "101",
@@ -103,7 +110,7 @@ Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Respuesta exitosa (200):
 
-```
+```json
 {
   "id": 1,
   "number": 101,
@@ -119,7 +126,7 @@ Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Body (Ejemplo):
 
-```
+```json
 {
   "number": 102,
   "status": "occupied"
@@ -128,7 +135,7 @@ Body (Ejemplo):
 
 Respuesta exitosa (200):
 
-```
+```json
 {
   "id": 1,
   "number": 102,
@@ -150,7 +157,8 @@ Descripción: Devuelve el historial de cambios de estado de una habitación.
 Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Respuesta exitosa (200):
-```
+
+```json
 [
   {
     "status": "occupied",
@@ -171,13 +179,15 @@ Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Respuesta exitosa (200):
 
-```
+```json
 {
   "message": "Room reserved successfully."
 }
+```
 
 Respuesta de error (400):
 
+```json
 {
   "message": "Room is already occupied."
 }
@@ -190,7 +200,7 @@ Encabezados requeridos:
 Authorization: Bearer {TOKEN}
 Respuesta exitosa (200):
 
-```
+```json
 {
   "message": "Room released successfully."
 }
@@ -198,7 +208,7 @@ Respuesta exitosa (200):
 
 Respuesta de error (400):
 
-```
+```json
 {
   "message": "Room is already available."
 }
