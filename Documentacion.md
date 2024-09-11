@@ -16,55 +16,54 @@
     "password": "secret123"
   }
 
-Respuesta exitosa (201):
-
-```json
-{
+- **Respuesta exitosa (201)**:
+  ```json
+  {
   "access_token": "TOKEN",
   "token_type": "Bearer"
   }
-```
+
 
 ### 2. inicio de sesión 
-Método: POST
-Ruta: /login
-Descripción: Autentica un usuario y genera un token de acceso.
+- **Método**: POST
+- **Ruta**: /login
+- **Descripción**: Autentica un usuario y genera un token de acceso.
 
-Body (Ejemplo): 
+- **Body (Ejemplo)**: 
 
-```json
-{
+  ```json
+  {
   "email": "john@example.com",
   "password": "secret123"
   }
-```
-  
-Respuesta exitosa (200):
 
-```json
-{
+  
+- **Respuesta exitosa (200)**:
+
+  ```json
+  {
   "access_token": "TOKEN",
   "token_type": "Bearer"
-}
-```
+  }
 
-Respuesta error (401):
 
-```json
-{
-"message": "Invalid login details"
-}
-```
+- **Respuesta error (401)**:
+
+  ```json
+  {
+  "message": "Invalid login details"
+  }
+
 
 ## Gestion de habitaciones 
 ### 1. Listar habitaciones
-Metodo: GET
-Ruta: /rooms
-Descripción: Devuelve una lista de todas las habitaciones disponibles.
-Encabezados requeridos:
-Authorization: Bearer {TOKEN}
+- **Metodo**: GET
+- **Ruta**: /rooms
+- **Descripción**: Devuelve una lista de todas las habitaciones disponibles.
+- **Encabezados requeridos**:
+   - **Authorization: Bearer {TOKEN}
 
-Respuesta exitosa (200):
+- **Respuesta exitosa (200)**:
 
 ```json
 [
