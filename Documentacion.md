@@ -6,6 +6,12 @@ Método: POST
 Ruta: /register
 Descripción: Registra un nuevo usuario en el sistema.
 Body (Ejemplo):
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "secret123"
+}
 {
   "name": "John Doe",
   "email": "john@example.com",
