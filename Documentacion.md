@@ -1,25 +1,20 @@
 # Documentación de la API de Hospedaje
 
 ## Autenticación
-### 1. Registro de usuario 
-Método: POST 
-Ruta: /register
-Descripción: Registra un nuevo usuario en el sistema.
 
-Body (Ejemplo):
+### 1. Registro de usuario
 
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "secret123"
-}
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "secret123"
-}
-```
+- **Método**: POST  
+- **Ruta**: `/register`  
+- **Descripción**: Registra un nuevo usuario en el sistema.
+
+- **Body (Ejemplo)**:
+  ```json
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "secret123"
+  }
 
 Respuesta exitosa (201):
 
