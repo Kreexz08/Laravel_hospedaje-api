@@ -61,161 +61,161 @@
 - **Ruta**: /rooms
 - **Descripción**: Devuelve una lista de todas las habitaciones disponibles.
 - **Encabezados requeridos**:
-   - **Authorization: Bearer {TOKEN}
+   - **Authorization**: Bearer {TOKEN}
 
 - **Respuesta exitosa (200)**:
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Room 1",
-    "status": "available"
-    },
-]
-```
+  ```json
+   [
+     {
+     "id": 1,
+     "name": "Room 1",
+     "status": "available"
+     },
+   ]
+
 
 ### 2. Crear una nueva habitación
-Método: POST
-Ruta: /rooms
-Descripción: Crea una nueva habitación.
-Encabezados requeridos:
-Authorization: Bearer {TOKEN}
+- **Método**: POST
+- **Ruta**: /rooms
+- **Descripción**: Crea una nueva habitación.
+- **Encabezados requeridos**:
+  - **Authorization**: Bearer {TOKEN}
 
-Body (Ejemplo):
+- **Body (Ejemplo)**:
 
-```json
-{
-  "number": "101",
-  "status": "available"
-}
-```
-Respuesta exitosa (201):
+  ```json
+   {
+   "number": "101",
+   "status": "available"
+   }
 
-```json
-{
+- **Respuesta exitosa (201)**:
+
+  ```json
+  {
   "id": 1,
   "number": "101",
   "status": "available"
-}
-```
+  }
+
 
 ### 3. Ver detalles de una habitación
-Método: GET
-Ruta: /rooms/{room}
-Descripción: Muestra los detalles de una habitación específica.
-Encabezados requeridos:
-Authorization: Bearer {TOKEN}
+- **Método**: GET
+- **Ruta**: /rooms/{room}
+- **Descripción**: Muestra los detalles de una habitación específica.
+- **Encabezados requeridos**:
+  - **Authorization**: Bearer {TOKEN}
 
-Respuesta exitosa (200):
+- **Respuesta exitosa (200)**:
 
-```json
-{
+  ```json
+  {
   "id": 1,
   "number": 101,
   "status": "available"
-}
-```
+  }
+
 
 ### 4. Actualizar datos de una habitación 
-Método: PUT
-Ruta: /rooms/{room}
-Descripción: Actualiza la información de una habitación.
-Encabezados requeridos:
-Authorization: Bearer {TOKEN}
+- **Método**: PUT
+- **Ruta**: /rooms/{room}
+- **Descripción**: Actualiza la información de una habitación.
+- **Encabezados requeridos**:
+  - **Authorization**: Bearer {TOKEN}
 
-Body (Ejemplo):
+- **Body (Ejemplo)**:
 
-```json
-{
+  ```json
+  {
   "number": 102,
   "status": "occupied"
   }
-```
 
-Respuesta exitosa (200):
 
-```json
-{
+- **Respuesta exitosa (200)**:
+
+  ```json
+  {
   "id": 1,
   "number": 102,
   "status": "occupied" 
-}
-```
+  }
+
 
 ### 5. Eliminar una habitación
-Método: DELETE
-Ruta: /rooms/{room}
-Descripción: Elimina una habitación específica.
-Encabezados requeridos:
-Authorization: Bearer {TOKEN}
+- **Método**: DELETE
+- **Ruta**: /rooms/{room}
+- **Descripción**: Elimina una habitación específica.
+- **Encabezados requeridos**:
+  - **Authorization**: Bearer {TOKEN}
 
 ### 6. Obtener el historial de estados de una habitación
-Método: GET
-Ruta: /rooms/{room}/statuses
-Descripción: Devuelve el historial de cambios de estado de una habitación.
-Encabezados requeridos:
-Authorization: Bearer {TOKEN}
+- **Método**: GET
+- **Ruta**: /rooms/{room}/statuses
+- **Descripción**: Devuelve el historial de cambios de estado de una habitación.
+- **Encabezados requeridos**:
+  - **Authorization**: Bearer {TOKEN}
 
-Respuesta exitosa (200):
+- **Respuesta exitosa (200)**:
 
-```json
-[
-  {
+  ```json
+  [
+   {
     "status": "occupied",
     "status_changed_at": "2024-09-01T12:00:00Z"
-  },
-  {
+   },
+   {
     "status": "available",
     "status_changed_at": "2024-09-02T08:00:00Z"
-  },
-]
-```
+   },
+  ]
+
 ## Gestion de reservas
 ### 1. Reservar una habitación
-Método: POST
-Ruta: /rooms/{room}/reserve
-Descripción: Marca una habitación como ocupada.
-Encabezados requeridos:
-Authorization: Bearer {TOKEN}
+- **Método**: POST
+- **Ruta**: /rooms/{room}/reserve
+- **Descripción**: Marca una habitación como ocupada.
+- **Encabezados requeridos**:
+  - **Authorization**: Bearer {TOKEN}
 
-Respuesta exitosa (200):
+- **Respuesta exitosa (200)**:
 
-```json
-{
+  ```json
+  {
   "message": "Room reserved successfully."
-}
-```
+  }
 
-Respuesta de error (400):
 
-```json
-{
+- **Respuesta de error (400)**:
+
+  ```json
+  {
   "message": "Room is already occupied."
-}
-```
+  }
+
 ### 2. Liberar una habitación
-Método: POST
-Ruta: /rooms/{room}/release
-Descripción: Marca una habitación como disponible.
-Encabezados requeridos:
-Authorization: Bearer {TOKEN}
+- **Método**: POST
+- **Ruta**: /rooms/{room}/release
+- **Descripción**: Marca una habitación como disponible.
+- **Encabezados requeridos**:
+  - **Authorization**: Bearer {TOKEN}
 
-Respuesta exitosa (200):
+- **Respuesta exitosa (200)**:
 
-```json
-{
+  ```json
+  {
   "message": "Room released successfully."
-}
-```
+  }
 
-Respuesta de error (400):
 
-```json
-{
+- **Respuesta de error (400)**:
+
+  ```json
+  {
   "message": "Room is already available."
-}
-```
+  }
+
 
 
 
