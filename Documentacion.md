@@ -9,21 +9,20 @@
 - **Descripción**: Registra un nuevo usuario en el sistema.
 
 - **Body (Ejemplo)**:
+
   ```json
   {
     "name": "John Doe",
     "email": "john@example.com",
     "password": "secret123"
   }
-
 - **Respuesta exitosa (201)**:
+ 
   ```json
   {
-  "access_token": "TOKEN",
-  "token_type": "Bearer"
+   "access_token": "TOKEN",
+   "token_type": "Bearer"
   }
-
-
 ### 2. inicio de sesión 
 - **Método**: POST
 - **Ruta**: /login
@@ -33,28 +32,22 @@
 
   ```json
   {
-  "email": "john@example.com",
-  "password": "secret123"
+   "email": "john@example.com",
+   "password": "secret123"
   }
-
-  
 - **Respuesta exitosa (200)**:
 
   ```json
   {
-  "access_token": "TOKEN",
-  "token_type": "Bearer"
+   "access_token": "TOKEN",
+   "token_type": "Bearer"
   }
-
-
 - **Respuesta error (401)**:
 
   ```json
   {
-  "message": "Invalid login details"
+   "message": "Invalid login details"
   }
-
-
 ## Gestion de habitaciones 
 ### 1. Listar habitaciones
 - **Metodo**: GET
@@ -68,13 +61,11 @@
   ```json
    [
      {
-     "id": 1,
-     "name": "Room 1",
-     "status": "available"
+      "id": 1,
+      "name": "Room 1",
+      "status": "available"
      },
    ]
-
-
 ### 2. Crear una nueva habitación
 - **Método**: POST
 - **Ruta**: /rooms
@@ -86,20 +77,17 @@
 
   ```json
    {
-   "number": "101",
-   "status": "available"
+    "number": "101",
+    "status": "available"
    }
-
 - **Respuesta exitosa (201)**:
 
   ```json
   {
-  "id": 1,
-  "number": "101",
-  "status": "available"
+   "id": 1,
+   "number": "101",
+   "status": "available"
   }
-
-
 ### 3. Ver detalles de una habitación
 - **Método**: GET
 - **Ruta**: /rooms/{room}
@@ -111,12 +99,10 @@
 
   ```json
   {
-  "id": 1,
-  "number": 101,
-  "status": "available"
+   "id": 1,
+   "number": 101,
+   "status": "available"
   }
-
-
 ### 4. Actualizar datos de una habitación 
 - **Método**: PUT
 - **Ruta**: /rooms/{room}
@@ -128,21 +114,17 @@
 
   ```json
   {
-  "number": 102,
-  "status": "occupied"
+   "number": 102,
+   "status": "occupied"
   }
-
-
 - **Respuesta exitosa (200)**:
 
   ```json
   {
-  "id": 1,
-  "number": 102,
-  "status": "occupied" 
+   "id": 1,
+   "number": 102,
+   "status": "occupied" 
   }
-
-
 ### 5. Eliminar una habitación
 - **Método**: DELETE
 - **Ruta**: /rooms/{room}
@@ -170,7 +152,6 @@
     "status_changed_at": "2024-09-02T08:00:00Z"
    },
   ]
-
 ## Gestion de reservas
 ### 1. Reservar una habitación
 - **Método**: POST
@@ -183,17 +164,14 @@
 
   ```json
   {
-  "message": "Room reserved successfully."
+   "message": "Room reserved successfully."
   }
-
-
 - **Respuesta de error (400)**:
 
   ```json
   {
-  "message": "Room is already occupied."
+   "message": "Room is already occupied."
   }
-
 ### 2. Liberar una habitación
 - **Método**: POST
 - **Ruta**: /rooms/{room}/release
@@ -205,17 +183,11 @@
 
   ```json
   {
-  "message": "Room released successfully."
+   "message": "Room released successfully."
   }
-
-
 - **Respuesta de error (400)**:
 
   ```json
   {
-  "message": "Room is already available."
+   "message": "Room is already available."
   }
-
-
-
-
