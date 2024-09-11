@@ -2,7 +2,7 @@
 
 ## Autenticación
 ### 1. Registro de usuario 
-Método: POST
+Método: POST 
 Ruta: /register
 Descripción: Registra un nuevo usuario en el sistema.
 
