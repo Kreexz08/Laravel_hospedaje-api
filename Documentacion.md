@@ -1,5 +1,9 @@
 # Documentación de la API de Hospedaje
 
+## Correr el proyecto
+- **Instalacion de dependencias**:  `Composer install`
+- **Iniciar el servidor**: `php artisan serve`
+
 ## Autenticación
 
 ### 1. Registro de usuario
